@@ -7,7 +7,7 @@
 // 프로그램을 작성하세요. 다음의 4 x 5 얼음 틀 예시에서는 아이스크림이 총 3개
 // 생성됩니다.
 
-// 출처 : https://youtu.be/7C9RgOcvkvo (유튜브 나동빈)
+// 출처 : https://youtu.be/7C9RgOcvkvo?t=2564 (유튜브 나동빈)
 
 const N = 4;
 const M = 5;
