@@ -50,7 +50,7 @@ console.log(BFS(0, 0));
 
 function BFS(firstI, firstJ) {
   // 큐에 현재 위치(첫 시작 위치)를 방문 처리 (BFS에서 방문 처리 = 큐에 넣기)
-  // BFS는 어차피 1번 수행되는 함수이므로 첫 시작 위치를 큐에 넣는 것은
+  // BFS는 어차피 한 번 수행되는 함수이므로 첫 시작 위치를 큐에 넣는 것은
   // 함수 밖에서 미리 수행해도 상관 없음
   queue.push(firstI);
   queue.push(firstJ);
