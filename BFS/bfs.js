@@ -11,42 +11,42 @@ const graph = [
   [1, 7],
 ];
 
-// 처음에는 아직 방문한 곳이 하나도 없으므로 기본 값을 false로 한다.
-let visited = new Array(9).fill(false);
+// BFS에서 willVisit은 각 정점의 방문 예정 여부를 기록하는 배열이며, 기본 값은 false이다.
+let willVisit = new Array(9).fill(false);
 
-// bfs는 큐를 기반으로 동작하므로 큐를 생성한다.
+// BFS는 큐를 기반으로 동작하므로 큐를 생성한다.
+// 여기서 큐는 방문 예정 목록을 뜻한다.
 let queue = new Array();
 
 // 탐색 시작(1번 노드부터 탐색)
-bfs(1);
+BFS(1);
 
-// x번 노드의 인접 노드를 탐색하는 함수
-function bfs(x) {
-  // 큐에 x번 노드를 넣음
-  queue.push(x);
+function BFS(start) {
+  // 시작점을 방문 예정 목록(queue)에 넣고,
+  queue.push(start);
+  // 예약 완료 처리를 한다.(willVisit[start] = true)
+  willVisit[start] = true;
 
-  // x번 노드를 방문 처리함 (visited[x]를 true로 변경)
-  visited[x] = true;
-
-  // 큐의 맨 앞에 들어 있는 노드를 꺼내서 변수 first에 저장한다.
+  // queue가 빌 때까지 반복
   while (queue.length !== 0) {
-    const first = queue.shift();
+    // 큐의 맨 앞에 들어 있는 값을 빼고 x에 저장한다.
+    const x = queue.shift();
 
-    // 큐의 맨 앞에서 꺼낸 노드를 출력한다.
-    console.log("first : ", first);
+    // x를 방문했음을 기록한다.
+    console.log("x : ", x);
 
-    // 큐의 맨 앞에서 꺼낸 노드의 인접 노드가 정리되어 있는 graph[first]를 반복문으로 확인
-    for (let i = 0; i < graph[first].length; i++) {
-      // 큐의 맨 앞에서 꺼낸 노드의 인접 노드인 y번 노드를 변수 y에 저장
-      const y = graph[first][i];
+    // x의 인접 노드가 정리되어 있는 graph[x]를 반복문으로 확인
+    for (let i = 0; i < graph[x].length; i++) {
+      // x의 인접 노드를 변수 y에 저장
+      const y = graph[x][i];
 
-      // 만약 y번 노드을 방문한 적이 없다면
-      if (!visited[y]) {
-        // 큐에 y번 노드를 넣고
+      // y번 노드로의 이동 예정이 없다면(=이동 가능히다면)
+      if (!willVisit[y]) {
+        // y번 노드를 방문 예정 목록(queue)에 넣고,
         queue.push(y);
 
-        // y번 노드를 방문 처리함
-        visited[y] = true;
+        // 예약 완료 처리를 한다.(willVisit[y] = true)
+        willVisit[y] = true;
       }
     }
   }
