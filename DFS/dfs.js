@@ -15,10 +15,10 @@ const graph = [
 let visited = new Array(9).fill(false);
 
 // 탐색 시작(1번 노드부터 탐색)
-dfs(1);
+DFS(1);
 
 // x번 노드의 인접 노드를 탐색하는 함수
-function dfs(x) {
+function DFS(x) {
   // x번 노드를 방문 처리함 (visited[x]를 true로 변경)
   visited[x] = true;
 
@@ -33,7 +33,7 @@ function dfs(x) {
     // 만약 y번 노드을 방문한 적이 없다면
     if (!visited[y]) {
       // y번 노드 방문
-      dfs(y);
+      DFS(y);
     }
   }
 }
