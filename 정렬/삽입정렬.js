@@ -19,7 +19,7 @@ let array = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8];
 
 // 이중 반복문을 이용
 // 0번 index의 값은 고정시키고,
-// 1번 index부터 삽입 정렬을 수행
+// 1번 index부터 배열의 마지막 index까지 삽입 정렬을 수행
 for (let i = 1; i < array.length; i++) {
   // i번 index부터 시작해서 0번 index까지 1씩 감소하며 반복
   for (let j = i; j > 0; j--) {
@@ -28,6 +28,7 @@ for (let i = 1; i < array.length; i++) {
       let temp = array[j - 1];
       array[j - 1] = array[j];
       array[j] = temp;
+
       // j-1이 더 작은 수일 경우, 더 이상 교환않고 종료함
     } else {
       break;
