@@ -10,4 +10,5 @@
 // 4. 범위를 좁혀가며 값을 찾는 경우
 // 탐색 범위를 좁히기 위해 left를 mid 또는 right를 mid로 설정하고, mid를 재계산 한다.
 // (left를 mid+1, right를 mid-1로 바꾸면 안되는 이유 : mid 역시 답이 될 수 있기 때문)
-// left가 right-1이 될 때까지 이를 반복하고, left가 right-1이 되면 left가 찾는 값이 된다.
+// 위 과정을 left가 right-1이 될 때까지 반복하고 ( while(left < right-1) ),
+// left와 right의 차이가 1이 되어 반복문이 종료되면, left가 찾는 값이 된다.
