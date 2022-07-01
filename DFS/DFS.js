@@ -22,9 +22,6 @@ function DFS(x) {
   // x번 노드를 방문 처리함 (visited[x]를 true로 변경)
   visited[x] = true;
 
-  // 이번에 방문한 x번 노드 출력
-  console.log("x : ", x);
-
   // x번 노드의 인접 노드가 정리되어 있는 graph[x]를 반복문으로 확인
   for (let i = 0; i < graph[x].length; i++) {
     // x번 노드의 인접 노드인 y번 노드를 변수 y에 저장
@@ -40,7 +37,7 @@ function DFS(x) {
   // 만일 for문이 끝났다면, 현재 단계에서 더이상 탐색을 진행할 수 없으므로
   // 다른 경로를 찾기 위해 다시 윗 단계로 올라가서 for문을 증가시켜야함
   // 따라서 현재 방문한 곳의 방문처리를 취소함
-  visited[x] = true;
+  visited[x] = false;
 }
 
 // DFS 특징
