@@ -8,7 +8,8 @@
 // 이를 값을 찾을 때까지 이를 반복한다.
 
 // 4. 범위를 좁혀가며 값을 찾는 경우
-// 탐색 범위를 좁히기 위해 left를 mid 또는 right를 mid로 설정하고, mid를 재계산 한다.
-// (left를 mid+1, right를 mid-1로 바꾸면 안되는 이유 : mid 역시 답이 될 수 있기 때문)
-// 위 과정을 left가 right-1이 될 때까지 반복하고 ( while(left < right-1) ),
-// left와 right의 차이가 1이 되어 반복문이 종료되면, left가 찾는 값이 된다.
+// 탐색 범위를 좁히기 위해 left를 mid+1 또는 right를 mid-1로 설정하고, mid를 재계산 한다.
+// 문제의 요구에 따라 가장 worst case를 found 변수 저장하고(보통 left 또는 right 값 중 하나),
+// 탐색이 성공할 때마다 found 변수의 값을 더 좋은 case로 변경하면 된다.
+// 위 과정을 left가 right보다 커질 때까지 반복하고 ( while(left <= right) ),
+// 반복문이 종료되면, found가 최종적으로 찾는 문제의 해가 된다.
